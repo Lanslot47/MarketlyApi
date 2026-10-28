@@ -93,6 +93,7 @@ exports.updateListing = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
 exports.getListingById= async(req, res)=>{
   try{
     const listing = await Listing.findById(req.params.id)
@@ -137,4 +138,3 @@ exports.deleteListing = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
-

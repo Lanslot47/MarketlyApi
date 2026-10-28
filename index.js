@@ -4,22 +4,18 @@ const app = express();
 const port = 5000;
 const mongoose = require('mongoose')
 const mongodbUrl = "mongodb://localhost:27017/marketly";
+const db = process.env.MONGODBURL
 const cors =require('cors')
 
 
 
 
-mongoose.connect(mongodbUrl)
+mongoose.connect(db)
     .then(() => console.log('database connected'))
     .catch((error) => console.log(`mongoDb connection ${error}`))
 
 app.use(express.json())
-app.use(cors({
-    origin: [
-        'http://localhost:3000',
-        'http://localhost:3001'
-    ]
-}))
+app.use(cors())
 
 app.get('/', (req, res) => {
     res.send({ message: "API is running", status: 200 });

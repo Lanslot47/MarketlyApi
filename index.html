@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            display: grid;
+            grid-template-columns: 300px 300px 300px 300px;
+            gap: 3px;
+        }
+        .div{
+            height: 100px;
+            background-color: red;
+        }
+        @media (max-width:768px) {
+            .father{
+                display: grid;
+                grid-template-columns: 300px 300px;
+                
+            }
+            .div{
+                background-color: blue;
+            }
+        }
+        @media (max-width: 480px) {
+            .father{
+                display: grid;
+                grid-template-columns: 330px;
+            }
+            .div{
+                background-color: green;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="father">
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+        <div class="div"></div>
+    </div>
+</body>
+<!-- tablet : 768px -->
+<!-- phone: 480px -->
+</html>
+
